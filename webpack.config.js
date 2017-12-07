@@ -30,7 +30,7 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                loader: `style-loader!css-loader`
+                loader: `style-loader!css-loader?${cssModules}`
             }
         ]
     },
@@ -38,7 +38,7 @@ module.exports = {
         contentBase: path.join(__dirname, "build"),
         historyApiFallback: true,
         compress: true,
-        port: 3000,
+        port: 8000,
         open: true,
     },
     plugins: [
