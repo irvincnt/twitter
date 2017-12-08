@@ -45,7 +45,7 @@ class Main extends Component {
         <ProfileBar
           picture={this.props.user.photoURL}
           username={this.props.user.email.split('@')[0]}
-          onOpenText={this.handlerOpenText}
+          onOpenText={this.handlerOpenText.bind(this)}
         />
         {this.renderOpenText()}
         <MessageList messages={this.state.messages}/>

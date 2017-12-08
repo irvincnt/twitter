@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styles from 'profile-bar.css'
+import styles from './profile-bar.css'
 
 class ProfileBar extends Component{
   constructor(){
@@ -10,7 +10,7 @@ class ProfileBar extends Component{
     return(
       <div className={styles.root}>
         <figure>
-          <img className={styles.avatart} src={this.props.picture} />
+          <img className={styles.avatar} src={this.props.picture} />
         </figure>
         <span className={styles.username}> Hola @{this.props.username}!</span>
         <button onClick={this.props.onOpenText} className={styles.button}>
