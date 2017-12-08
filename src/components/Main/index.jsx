@@ -6,6 +6,7 @@ class Main extends Component {
   constructor() {
     super()
     this.state = {
+      openText: false,
       messages: [
         {
           text: 'mensaje de prueba',
@@ -23,6 +24,11 @@ class Main extends Component {
         }
       ]
     }
+  }
+
+  handlerOpenText(event) {
+    event.preventDefault();
+    this.setState({ openText: true }) //cambiamos el estado de openText
   }
 
   render() {
