@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 
 import MessageList from '../MessageList'
+import InputText from '../InputText'
+import ProfileBar from '../ProfileBar'
 
 class Main extends Component {
   constructor() {
@@ -31,6 +33,12 @@ class Main extends Component {
     this.setState({ openText: true }) //cambiamos el estado de openText
   }
 
+  renderOpenText() {
+    if(this.state.openText) {
+        return <InputText/>
+    }
+  }
+
   render() {
     return(
       <div>
@@ -39,6 +47,7 @@ class Main extends Component {
           username={this.props.user.email.split('@')[0]}
           onOpenText={this.handlerOpenText}
         />
+        {this.renderOpenText()}
         <MessageList messages={this.state.messages}/>
       </div>
     )
